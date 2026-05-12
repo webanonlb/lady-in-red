@@ -50,10 +50,13 @@ export default function Footer() {
           {/* Site links */}
           <div className="md:col-span-3">
             <p className="text-[10px] tracking-widest2 uppercase text-gold/85 mb-5">Explore</p>
-            <ul className="space-y-3">
+            <ul className="divide-y divide-white/5 md:divide-y-0 md:space-y-3">
               {SITE_LINKS.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-cream/75 hover:text-gold-light transition-colors text-sm">
+                  <Link
+                    href={l.href}
+                    className="block py-2.5 md:py-0 text-cream/75 hover:text-gold-light transition-colors text-sm"
+                  >
                     {l.label}
                   </Link>
                 </li>
@@ -64,12 +67,12 @@ export default function Footer() {
           {/* The fleet */}
           <div className="md:col-span-4">
             <p className="text-[10px] tracking-widest2 uppercase text-gold/85 mb-5">The Fleet</p>
-            <ul className="grid grid-cols-2 gap-y-3 gap-x-4">
+            <ul className="grid grid-cols-2 gap-y-1 md:gap-y-3 gap-x-4">
               {FLEET.map((v) => (
                 <li key={v.slug}>
                   <Link
                     href={`/fleet/${v.slug}`}
-                    className="text-cream/75 hover:text-gold-light transition-colors text-sm whitespace-nowrap"
+                    className="block py-2.5 md:py-0 text-cream/75 hover:text-gold-light transition-colors text-sm whitespace-nowrap"
                   >
                     {v.character}
                   </Link>

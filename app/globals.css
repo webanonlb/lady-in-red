@@ -188,6 +188,23 @@ body {
 }
 
 /* =========================================================
+   MOBILE CTA STACK — full-width, aligned buttons on small viewports.
+   Apply `cta-stack` to a flex container holding .btn-red / .btn-ghost.
+   ========================================================= */
+@media (max-width: 639px) {
+  .cta-stack {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cta-stack > .btn-red,
+  .cta-stack > .btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
    EYEBROW LABEL
    ========================================================= */
 .eyebrow {

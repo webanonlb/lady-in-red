@@ -65,7 +65,7 @@ export default function HomeHero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="mt-10 flex flex-wrap items-center gap-3"
+          className="mt-10 flex flex-wrap items-center gap-3 cta-stack"
         >
           <Link href="#collection" className="btn-red">
             Explore the Collection
@@ -93,8 +93,9 @@ export default function HomeHero() {
           <span>Bookings by Instagram DM</span>
         </motion.div>
 
-        {/* Scroll cue */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[10px] tracking-widest2 uppercase text-cream/55">
+        {/* Scroll cue — hidden on mobile so it doesn't sit under the
+            fixed bottom action bar */}
+        <div className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-[10px] tracking-widest2 uppercase text-cream/55">
           <span>Scroll</span>
           <span className="block w-px h-10 bg-gradient-to-b from-gold/70 to-transparent" />
         </div>

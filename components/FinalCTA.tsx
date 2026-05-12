@@ -32,7 +32,7 @@ export default function FinalCTA() {
           {BRAND.short}
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 cta-stack">
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-red">
             DM on Instagram
           </a>

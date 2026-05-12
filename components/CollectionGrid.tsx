@@ -24,7 +24,9 @@ export default function CollectionGrid() {
           </p>
         </div>
 
-        {/* Grid */}
+        {/* Grid — 7 cards. On 2-col mobile the last (orphan) card spans
+            both columns as a deliberate "finishing" tile so no slot looks
+            empty. On lg+ everything is uniform 4-col. */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {FLEET.map((v, i) => (
             <motion.div
@@ -33,7 +35,7 @@ export default function CollectionGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.8, delay: (i % 4) * 0.07, ease: [0.2, 0.8, 0.2, 1] }}
-              className={`${i === 3 ? "col-span-2 lg:col-span-1" : ""}`}
+              className={`${i === FLEET.length - 1 ? "col-span-2 lg:col-span-1" : ""}`}
             >
               <Link
                 href={`/fleet/${v.slug}`}

@@ -100,7 +100,7 @@ export default function VehiclePage({ params }: { params: { slug: string } }) {
               {v.intro}
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center gap-3 cta-stack">
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-red">
                 DM for {v.character}
               </a>
@@ -210,7 +210,7 @@ export default function VehiclePage({ params }: { params: { slug: string } }) {
               Availability for {v.character} is handled through Instagram DM.
               Send your date, location, and the moment you want to create.
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 cta-stack">
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-red">
                 Message {INSTAGRAM_HANDLE}
               </a>
