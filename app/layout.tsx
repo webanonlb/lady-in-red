@@ -25,44 +25,52 @@ const allura = Allura({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ladyinred.example"),
-  title: "Lady in Red — Vintage Mercedes 560 SL Rental in Beirut",
+  metadataBase: new URL("https://classiccircle.example"),
+  title: {
+    default:
+      "Classic Circle — Classic Car & Motorcycle Rental in Beirut, Lebanon",
+    template: "%s | Classic Circle",
+  },
   description:
-    "Rent a vintage red Mercedes-Benz 560 SL for weddings, music videos, photoshoots, private events, and timeless drives in Beirut, Lebanon. Book by Instagram DM.",
+    "A curated fleet of iconic cars and motorcycles — Mercedes 560 SL, Porsche 997, Royal Enfield, Ducati, Vespa and more — for weddings, films, editorial shoots, and timeless moments in Beirut, Lebanon. Book by Instagram DM.",
   keywords: [
-    "vintage Mercedes rental Beirut",
-    "Mercedes 560 SL rental Lebanon",
-    "wedding car Beirut",
+    "Classic Circle Beirut",
     "classic car rental Lebanon",
-    "vintage car photoshoot Beirut",
+    "vintage car rental Beirut",
+    "wedding car Beirut",
+    "Mercedes 560 SL rental Lebanon",
+    "Porsche 997 rental Beirut",
+    "Ducati rental Beirut",
+    "Vespa rental Lebanon",
     "music video car rental Lebanon",
     "luxury wedding car Beirut",
     "Lady in Red",
-    "classic convertible Lebanon",
+    "Valentino Porsche",
   ],
-  authors: [{ name: "Lady in Red" }],
+  authors: [{ name: "Classic Circle" }],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    title: "Lady in Red — Vintage Mercedes 560 SL Rental in Beirut",
+    title:
+      "Classic Circle — Classic Car & Motorcycle Rental in Beirut, Lebanon",
     description:
-      "A vintage red Mercedes-Benz 560 SL for weddings, videos, photoshoots, and timeless arrivals in Beirut. Book by Instagram DM.",
-    siteName: "Lady in Red — Classic Car Rental",
+      "Curated icons for weddings, films, and timeless moments. Book by Instagram DM.",
+    siteName: "Classic Circle — Classic Car Rental",
     locale: "en_US",
     images: [
       {
         url: "/images/hero-sunset.jpg",
         width: 1200,
         height: 1500,
-        alt: "Vintage red Mercedes-Benz 560 SL convertible at Beirut sunset",
+        alt: "Classic Circle — vintage red Mercedes-Benz 560 SL at a Beirut sunset",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lady in Red — Vintage Mercedes 560 SL Rental in Beirut",
+    title: "Classic Circle — Beirut, Lebanon",
     description:
-      "Vintage red Mercedes 560 SL for weddings, films, and editorial shoots in Beirut. DM " +
+      "Iconic cars and motorcycles for weddings, films, and timeless moments in Beirut. DM " +
       INSTAGRAM_HANDLE,
     images: ["/images/hero-sunset.jpg"],
   },

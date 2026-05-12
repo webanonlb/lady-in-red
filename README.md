@@ -1,14 +1,17 @@
-# Lady in Red — Classic Car Rental
+# Classic Circle — Classic Car Rental
 
-A cinematic one-page website for **Lady in Red**, a vintage red Mercedes‑Benz 560 SL
-based in Beirut, Lebanon, available for weddings, music videos, editorial shoots,
-private events, and timeless drives.
+A cinematic, editorial site for **Classic Circle**, a Beirut-based curated
+fleet of classic cars and motorcycles. Lady in Red, Valentino, The Machine,
+The Gentleman, The Predator, Il Giallo, and Il Signore — each a character,
+each cast for its own kind of story.
 
-> _“She’s not just a car. She’s the scene.”_
+> _Drive icons. Live stories._
+>
+> _Timeless machines for unforgettable moments._
 
-The site is built with **Next.js 14 (App Router) + TypeScript + Tailwind CSS +
-Framer Motion**. Booking is handled exclusively via Instagram DM —
-there is intentionally no phone number, email, WhatsApp, contact form, map, or
+Built with **Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion**.
+Booking is exclusively via Instagram DM at **@ladyinred.sl** — there is
+intentionally no phone number, email, WhatsApp, contact form, map, or
 address anywhere on the site.
 
 ---
@@ -30,8 +33,26 @@ npm run build
 npm run start
 ```
 
-The site can be deployed straight to **Vercel**, **Netlify**, or any host that
-runs Next.js 14.
+The site can be deployed straight to **Vercel** or **Netlify**. A
+`netlify.toml` is included.
+
+---
+
+## Routes
+
+| Path                       | Page                                           |
+| -------------------------- | ---------------------------------------------- |
+| `/`                        | Home (hero + collection + use cases + lifestyle + CTA) |
+| `/fleet/lady-in-red`       | Lady in Red — Mercedes-Benz 560 SL             |
+| `/fleet/valentino`         | Valentino — Porsche 911 (997) Carrera S        |
+| `/fleet/the-machine`       | The Machine — Mercedes-Benz W124               |
+| `/fleet/the-gentleman`     | The Gentleman — Royal Enfield Classic          |
+| `/fleet/the-predator`      | The Predator — Ducati Monster                  |
+| `/fleet/il-giallo`         | Il Giallo — Ducati 749 (yellow)                |
+| `/fleet/il-signore`        | Il Signore — Vespa GTS                         |
+
+All vehicle pages are generated from the data in `lib/fleet.ts` and
+prerendered to static HTML at build time.
 
 ---
 
@@ -39,82 +60,67 @@ runs Next.js 14.
 
 There is a single source of truth for the Instagram URL.
 
-Open **`lib/constants.ts`** and replace the placeholder:
+Open **`lib/constants.ts`** and edit:
 
 ```ts
-// lib/constants.ts
-export const INSTAGRAM_URL = "INSTAGRAM_URL_PLACEHOLDER";
+export const INSTAGRAM_URL = "https://www.instagram.com/ladyinred.sl/";
 ```
 
-with the real profile or DM link, for example:
-
-```ts
-export const INSTAGRAM_URL = "https://instagram.com/ladyinred.sl";
-```
-
-Every CTA on the page (header, hero, service cards, wedding section, production
-section, booking section, final CTA, footer, and mobile bottom bar) reads from
-this constant. Updating it once updates every link on the site.
-
-The Instagram handle string (`@ladyinred.sl`) is also exported from the same
-file as `INSTAGRAM_HANDLE` if you ever need to update the handle copy.
+Every CTA on the site (header, hero, vehicle pages, lifestyle section,
+final CTA, footer, mobile bottom bar) reads from this constant. Updating it
+once updates every link on the site.
 
 ---
 
-## 2. Replace the photos
+## 2. Add, remove, or edit a vehicle character
 
-All site imagery lives in **`public/images/`**:
-
-| File                     | Where it appears                          | Recommended subject                       |
-| ------------------------ | ----------------------------------------- | ----------------------------------------- |
-| `hero-sunset.jpg`        | Hero, "The Car" section, Gallery (×2)     | Cinematic Beirut sunset / signature shot  |
-| `wedding-couple.jpg`     | Services card, Wedding feature, Gallery   | Bride & groom with the car                |
-| `night-beirut.jpg`       | Services card, Production feature, Gallery | The car at night in Beirut               |
-| `snow-mountain.jpg`      | Services card, Gallery                    | Snow / Faqra / mountains range            |
-| `just-married.jpg`       | Final CTA, Gallery                        | "Just Married" branded scene              |
-
-To swap a photo, drop a new file in `public/images/` using the same filename.
-The Next.js `<Image>` component will automatically optimize and serve modern
-formats (AVIF / WebP).
-
-If you want to **add more images** to the gallery, edit
-`components/Gallery.tsx` and add new entries to the `FRAMES` array, e.g.
+All fleet data lives in **`lib/fleet.ts`**. Each entry is one character:
 
 ```ts
 {
-  src: "/images/new-shot.jpg",
-  alt: "Descriptive alt text",
-  category: "Beirut",
-  caption: "Golden hour in Beirut",
-  span: "md:col-span-7",     // 12-column grid span (optional)
-  ratio: "aspect-[4/5]",     // tailwind aspect-ratio class (optional)
-},
+  slug: "valentino",                                    // URL slug
+  character: "Valentino",                                // character name
+  model: "Porsche 911 (997) Carrera S",
+  era: "Modern classic",
+  bodyType: "Coupé",
+  color: "Guards red",
+  origin: "Germany · 997",
+  badge: "Porsche 997 Carrera S",
+  tagline: "Arrive unforgettable.",
+  headline: "A timeless silhouette built for the moment.",
+  headlineEm: "the moment",
+  intro: "...",
+  body:  "...",
+  poster: "/fleet/valentino-hero.png",
+  cardImage: "/fleet/valentino-hero.png",
+  gallery: [ { src, alt, caption } … ],
+  bestFor: ["Weddings", "Productions", "Music videos", "Editorial"],
+  quote: "“Make your entrance count.”",
+  accent: "red",
+}
 ```
 
-Recommended image guidelines:
+To add a new character: append a new entry, drop your images in
+`public/fleet/`, and rebuild — the homepage grid, the dynamic page, the
+sitemap, and the footer all update automatically.
 
-- **Format:** JPEG (or WebP) at high quality
-- **Hero:** at least 2000×2500 px, portrait or 4:5
-- **Gallery:** 1600×2000 px or 2000×1250 px works well
-- Keep file sizes reasonable (300–700 KB each); Next.js will optimize further.
-- Always provide meaningful, descriptive alt text.
+To remove one: delete its entry from the array. The static route falls
+away on the next build.
 
 ---
 
-## 3. Edit copy
+## 3. Replace the photos
 
-All copy is hard-coded in component files, kept as plain strings so it’s easy
-to scan and tweak. The most-edited files are likely:
+| Folder              | Used by                                |
+| ------------------- | -------------------------------------- |
+| `public/images/`    | Lady in Red character & global hero    |
+| `public/fleet/`     | All other fleet characters             |
 
-- `components/Hero.tsx` — headline / subheadline
-- `components/Services.tsx` — the four service cards
-- `components/WeddingFeature.tsx` & `ProductionFeature.tsx`
-- `components/FAQ.tsx` — Q & A list
-- `components/Booking.tsx` — DM checklist
-- `app/layout.tsx` — SEO title / description / Open Graph metadata
+Drop a new file with the same filename and the site picks it up
+automatically (Next.js Image will optimize to AVIF/WebP).
 
-The brand name, descriptor, location and tagline are also exported from
-`lib/constants.ts` if you’d like to reuse them in additional components.
+To add additional shots to a vehicle’s gallery, edit the `gallery` array
+in that vehicle’s entry in `lib/fleet.ts`.
 
 ---
 
@@ -123,37 +129,37 @@ The brand name, descriptor, location and tagline are also exported from
 - **Palette**
   - `ink` `#0A0606` — deep black base
   - `espresso` `#1F1714`, `burgundy` `#2A0A0E` — warm dark surfaces
-  - `red` `#B8252E` (with `red-glow` `#D8323D`) — the signature accent
-  - `gold` `#C9A86A` (with `gold-light` `#E0C689`) — champagne hairlines & micro‑text
+  - `red` `#B8252E` / `red-glow` `#D8323D` — signature accent
+  - `gold` `#C9A86A` / `gold-light` `#E0C689` — champagne hairlines
   - `cream` `#F4E9D8` — body text on dark
 - **Typography**
-  - Headings: **Playfair Display** (Google Fonts, loaded via `next/font`)
+  - Headings: **Playfair Display** (italic for emphasis, often gold)
   - Body: **Inter**
-  - Brand script accent: **Allura**
-- **Tone**: cinematic, romantic, premium, treats the car as a character (“she”,
-  “the scene”, “the icon”).
-- **Texture**: a fixed SVG grain overlay (`.grain-overlay`) sits on top of every
-  page for a subtle film feel; gold hairlines (`.gold-line`) separate sections;
-  vignettes soften image edges.
+  - Character / brand script: **Allura**
+- **Logo**: SVG CC monogram (`components/Monogram.tsx`) — no raster asset
+  to maintain or replace.
+- **Tone**: cinematic, romantic, premium. Each vehicle is a “she”, a
+  “character”, an “icon”, never a unit of inventory.
+- **Texture**: a fixed SVG grain overlay sits on every page; gold
+  hairlines separate sections; vignettes soften image edges.
 
 ---
 
 ## 5. What is intentionally _not_ on the site
 
-By design the site contains **no**:
+By design there is **no**:
 
 - Phone number
 - WhatsApp link
 - Email address
 - Contact form that submits anywhere
-- Call buttons
+- Call button
 - Map / address / directions
 - Business hours
 - Pricing
 - Fake reviews, client logos, or press mentions
 
-The single contact path is Instagram DM. If you need to add a different channel
-later, that is a deliberate brand decision — don’t add it without intent.
+The single contact path is Instagram DM.
 
 ---
 
@@ -163,27 +169,29 @@ later, that is a deliberate brand decision — don’t add it without intent.
 site/
 ├── app/
 │   ├── layout.tsx        # fonts + SEO metadata + grain overlay
-│   ├── page.tsx          # one-page composition + JSON-LD
-│   └── globals.css       # design tokens, buttons, animations
+│   ├── page.tsx          # /  → home composition
+│   ├── globals.css       # design tokens, buttons, animations
+│   └── fleet/[slug]/
+│       └── page.tsx      # dynamic character pages (7 static)
 ├── components/
-│   ├── Header.tsx
-│   ├── Hero.tsx
-│   ├── PositioningStrip.tsx
-│   ├── TheCar.tsx
-│   ├── Services.tsx
-│   ├── WeddingFeature.tsx
-│   ├── ProductionFeature.tsx
-│   ├── Gallery.tsx       # masonry + lightbox + keyboard nav
-│   ├── Experience.tsx
-│   ├── Booking.tsx       # concierge DM checklist
-│   ├── FAQ.tsx           # accessible <details> accordion
+│   ├── Header.tsx        # CC monogram + nav + Contact pill
+│   ├── HomeHero.tsx
+│   ├── CollectionGrid.tsx
+│   ├── UseCasesStrip.tsx
+│   ├── Lifestyle.tsx
+│   ├── ValueIcons.tsx    # Weddings / Films & Shoots / Events / etc.
 │   ├── FinalCTA.tsx
+│   ├── FleetStrip.tsx    # cross-sell row at the end of vehicle pages
 │   ├── Footer.tsx
-│   └── MobileBottomBar.tsx
+│   ├── MobileBottomBar.tsx
+│   └── Monogram.tsx      # SVG CC logo
 ├── lib/
-│   └── constants.ts      # ← edit INSTAGRAM_URL here
+│   ├── constants.ts      # ← Instagram URL + brand strings
+│   └── fleet.ts          # ← all vehicle data
 ├── public/
-│   └── images/           # ← drop new photos here
+│   ├── images/           # Lady in Red & global photography
+│   └── fleet/            # Valentino, The Machine, Predator, …
+├── netlify.toml
 ├── tailwind.config.ts
 ├── next.config.js
 └── README.md
@@ -191,31 +199,26 @@ site/
 
 ---
 
-## 7. Accessibility & performance notes
+## 7. Deployment
 
-- All images carry descriptive `alt` text.
-- The header and gallery support full keyboard navigation; the lightbox
-  responds to `Esc`, `←`, and `→`.
-- The grain overlay and marquee respect `prefers-reduced-motion`.
-- Images are served as AVIF/WebP via `next/image` with explicit `sizes`.
-- Mobile-first layout, with a sticky bottom action bar (DM · Gallery · Book) on
-  small screens for one-thumb conversion.
-- Type stays ≥16 px for body, contrast meets WCAG AA on cream-on-ink.
-
----
-
-## 8. Deployment
-
-The simplest path:
+### Vercel (one click)
 
 ```bash
 npm i -g vercel
 vercel
 ```
 
-Or push to a GitHub repo and import it on [vercel.com](https://vercel.com).
-No environment variables are required.
+### Netlify
+
+`netlify.toml` already declares:
+
+- Build command: `npm run build`
+- Publish directory: `.next`
+- Plugin: `@netlify/plugin-nextjs` (installed automatically)
+- Node 20
+
+Push to GitHub → connect on Netlify → done.
 
 ---
 
-_Built with care for Lady in Red — Beirut, Lebanon._
+_Built with care for Classic Circle — Beirut, Lebanon._

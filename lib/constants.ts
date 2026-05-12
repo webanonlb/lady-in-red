@@ -1,9 +1,9 @@
 // =====================================================================
-//  Lady in Red — Brand Constants
+//  Classic Circle — Brand Constants
 // ---------------------------------------------------------------------
-//  Replace INSTAGRAM_URL with the actual Instagram profile URL
-//  (or the deep DM link). All booking CTAs across the site read from
-//  this single source of truth.
+//  Single source of truth. The Instagram URL flows into every CTA
+//  across the site (header, hero, fleet cards, vehicle pages, footer,
+//  mobile bottom bar).
 // =====================================================================
 
 export const INSTAGRAM_URL = "https://www.instagram.com/ladyinred.sl/";
@@ -11,9 +11,13 @@ export const INSTAGRAM_URL = "https://www.instagram.com/ladyinred.sl/";
 export const INSTAGRAM_HANDLE = "@ladyinred.sl";
 
 export const BRAND = {
-  name: "Lady in Red",
+  name: "Classic Circle",
   descriptor: "Classic Car Rental",
+  monogram: "CC",
   location: "Beirut, Lebanon",
-  car: "Vintage Mercedes-Benz 560 SL",
-  tagline: "She’s not just a car. She’s the scene.",
+  tagline: "Drive icons. Live stories.",
+  hero: "Timeless machines for unforgettable moments.",
+  mission: "More than a rental. It’s a lifestyle.",
+  short:
+    "A curated collection of iconic machines for extraordinary occasions. We don’t just rent vehicles — we create moments that stay with you.",
 } as const;

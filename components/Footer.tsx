@@ -1,14 +1,16 @@
 "use client";
 
-import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from "@/lib/constants";
+import Link from "next/link";
+import { INSTAGRAM_URL, INSTAGRAM_HANDLE, BRAND } from "@/lib/constants";
+import { FLEET } from "@/lib/fleet";
+import Monogram from "./Monogram";
 
-const LINKS = [
-  { href: "#car", label: "The Car" },
-  { href: "#weddings", label: "Weddings" },
-  { href: "#shoots", label: "Shoots" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#book", label: "Book" },
+const SITE_LINKS = [
+  { href: "/#collection", label: "Collection" },
+  { href: "/#experiences", label: "Experiences" },
+  { href: "/#about", label: "About" },
+  { href: "/#events", label: "Events" },
+  { href: "/#gallery", label: "Gallery" },
 ];
 
 export default function Footer() {
@@ -18,14 +20,19 @@ export default function Footer() {
         <div className="grid md:grid-cols-12 gap-10 md:gap-16">
           {/* Brand */}
           <div className="md:col-span-5">
-            <p className="script-mark text-3xl">Lady in Red</p>
-            <p className="mt-1 text-[11px] tracking-widest2 uppercase text-gold/85">
-              Classic Car Rental
-            </p>
+            <div className="flex items-center gap-3">
+              <Monogram size={42} stroke="#E0C689" />
+              <div>
+                <p className="font-serif text-xl tracking-[0.18em] uppercase text-cream">
+                  {BRAND.name}
+                </p>
+                <p className="text-[9.5px] tracking-widest2 uppercase text-gold/80 mt-0.5">
+                  {BRAND.descriptor}
+                </p>
+              </div>
+            </div>
             <p className="mt-6 text-cream/70 leading-relaxed text-[15px] max-w-sm">
-              A vintage Mercedes-Benz 560 SL based in Beirut, Lebanon —
-              available for weddings, productions, editorials, and timeless
-              moments.
+              {BRAND.short}
             </p>
             <p className="mt-6 text-cream/85 text-sm">
               Beirut, Lebanon · Instagram:{" "}
@@ -40,38 +47,40 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Links */}
+          {/* Site links */}
           <div className="md:col-span-3">
-            <p className="text-[10px] tracking-widest2 uppercase text-gold/85 mb-5">
-              Explore
-            </p>
+            <p className="text-[10px] tracking-widest2 uppercase text-gold/85 mb-5">Explore</p>
             <ul className="space-y-3">
-              {LINKS.map((l) => (
+              {SITE_LINKS.map((l) => (
                 <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className="text-cream/75 hover:text-gold-light transition-colors text-sm"
-                  >
+                  <Link href={l.href} className="text-cream/75 hover:text-gold-light transition-colors text-sm">
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Booking */}
+          {/* The fleet */}
           <div className="md:col-span-4">
-            <p className="text-[10px] tracking-widest2 uppercase text-gold/85 mb-5">
-              Booking
-            </p>
-            <p className="text-cream/80 leading-relaxed text-[15px] max-w-xs">
-              DM us on Instagram to check availability.
-            </p>
+            <p className="text-[10px] tracking-widest2 uppercase text-gold/85 mb-5">The Fleet</p>
+            <ul className="grid grid-cols-2 gap-y-3 gap-x-4">
+              {FLEET.map((v) => (
+                <li key={v.slug}>
+                  <Link
+                    href={`/fleet/${v.slug}`}
+                    className="text-cream/75 hover:text-gold-light transition-colors text-sm whitespace-nowrap"
+                  >
+                    {v.character}
+                  </Link>
+                </li>
+              ))}
+            </ul>
             <a
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-red mt-6"
+              className="btn-red mt-7"
             >
               Message {INSTAGRAM_HANDLE}
             </a>
@@ -81,8 +90,8 @@ export default function Footer() {
         <div className="gold-line mt-16 mb-8" />
 
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] tracking-widest2 uppercase text-cream/45">
-          <p>© {new Date().getFullYear()} Lady in Red — Classic Car Rental</p>
-          <p>Beirut · Lebanon</p>
+          <p>© {new Date().getFullYear()} {BRAND.name} — {BRAND.descriptor}</p>
+          <p>Beirut · Lebanon · By Instagram DM</p>
         </div>
       </div>
     </footer>

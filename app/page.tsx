@@ -1,45 +1,31 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import PositioningStrip from "@/components/PositioningStrip";
-import TheCar from "@/components/TheCar";
-import Services from "@/components/Services";
-import WeddingFeature from "@/components/WeddingFeature";
-import ProductionFeature from "@/components/ProductionFeature";
-import Gallery from "@/components/Gallery";
-import Experience from "@/components/Experience";
-import Booking from "@/components/Booking";
-import FAQ from "@/components/FAQ";
+import HomeHero from "@/components/HomeHero";
+import CollectionGrid from "@/components/CollectionGrid";
+import Lifestyle from "@/components/Lifestyle";
+import UseCasesStrip from "@/components/UseCasesStrip";
+import ValueIcons from "@/components/ValueIcons";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
-import { INSTAGRAM_HANDLE } from "@/lib/constants";
+import { BRAND, INSTAGRAM_HANDLE } from "@/lib/constants";
+import { FLEET } from "@/lib/fleet";
 
-// JSON-LD structured data
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AutoRental",
-  name: "Lady in Red — Classic Car Rental",
+  name: `${BRAND.name} — ${BRAND.descriptor}`,
   description:
-    "Vintage red Mercedes-Benz 560 SL convertible available for weddings, music videos, photoshoots, private events, and timeless drives in Beirut, Lebanon.",
-  areaServed: {
-    "@type": "Country",
-    name: "Lebanon",
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Beirut",
-    addressCountry: "LB",
-  },
+    "A curated collection of iconic machines (Mercedes-Benz 560 SL, Porsche 997 Carrera S, Mercedes-Benz W124, Royal Enfield, Ducati Monster, Ducati 749, Vespa) for weddings, films, editorial shoots, private events, and timeless drives in Beirut, Lebanon.",
+  areaServed: { "@type": "Country", name: "Lebanon" },
+  address: { "@type": "PostalAddress", addressLocality: "Beirut", addressCountry: "LB" },
   sameAs: ["https://instagram.com/ladyinred.sl"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Lady in Red — Bookings",
-    itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Wedding car rental" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Music video & film car rental" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Editorial photoshoot car rental" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Private event & timeless drives" } },
-    ],
+    name: `${BRAND.name} — Fleet`,
+    itemListElement: FLEET.map((v) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: `${v.character} — ${v.model}` },
+    })),
   },
 };
 
@@ -52,16 +38,11 @@ export default function Home() {
       />
       <Header />
       <main className="overflow-hidden">
-        <Hero />
-        <PositioningStrip />
-        <TheCar />
-        <Services />
-        <WeddingFeature />
-        <ProductionFeature />
-        <Gallery />
-        <Experience />
-        <Booking />
-        <FAQ />
+        <HomeHero />
+        <CollectionGrid />
+        <UseCasesStrip />
+        <Lifestyle />
+        <ValueIcons />
         <FinalCTA />
       </main>
       <Footer />
@@ -69,11 +50,12 @@ export default function Home() {
 
       {/* Hidden SEO content with target keywords used naturally */}
       <p className="sr-only">
-        Lady in Red is a vintage Mercedes 560 SL rental in Beirut, offering a
-        classic car rental in Lebanon for weddings, music videos, photoshoots,
-        and private events. A luxury wedding car in Beirut and a vintage car
-        for editorial photoshoots — book the Mercedes 560 SL rental in Lebanon
-        by Instagram DM at {INSTAGRAM_HANDLE}.
+        {BRAND.name} is a Beirut-based curated rental of classic cars and motorcycles:
+        a vintage Mercedes 560 SL (Lady in Red), Porsche 997 Carrera S (Valentino),
+        Mercedes-Benz W124 (The Machine), Royal Enfield (The Gentleman), Ducati
+        Monster (The Predator), Ducati 749 (Il Giallo), and Vespa (Il Signore).
+        Available across Lebanon for weddings, music videos, photoshoots, private
+        events, and timeless drives. Book by Instagram DM at {INSTAGRAM_HANDLE}.
       </p>
     </>
   );
