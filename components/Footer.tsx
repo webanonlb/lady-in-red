@@ -21,7 +21,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
-              <Monogram size={42} stroke="#E0C689" />
+              <Monogram size={46} color="#E0C689" />
               <div>
                 <p className="font-serif text-xl tracking-[0.18em] uppercase text-cream">
                   {BRAND.name}

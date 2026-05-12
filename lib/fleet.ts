@@ -154,14 +154,25 @@ const theMachine: Vehicle = {
     "Square-jawed and unbothered, the W124 is the executive sedan at its peak — chrome touches, deep paint, and presence that does the talking.",
   body:
     "A serious frame for night drives, brand films, music videos, and cinematic establishing shots. Discreet, unbreakable, unforgettable.",
-  poster: "/fleet/the-machine-hero.png",
-  posterAlt: "The Machine — black Mercedes-Benz W124 in an urban scene",
-  cardImage: "/fleet/the-machine-hero.png",
-  cardAlt: "The Machine — Mercedes-Benz W124",
+  poster: "/fleet/the-machine-cafe.png",
+  posterAlt:
+    "The Machine — black Mercedes-Benz W124 parked outside Aïn El Mréisseh Café in Beirut",
+  cardImage: "/fleet/the-machine-cafe.png",
+  cardAlt: "The Machine — Mercedes-Benz W124 in Beirut",
   gallery: [
     {
+      src: "/fleet/the-machine-cafe.png",
+      alt: "Black Mercedes W124 outside Aïn El Mréisseh Café",
+      caption: "Beirut, after the rain",
+    },
+    {
+      src: "/fleet/the-machine-rain.png",
+      alt: "Black Mercedes W124 rear three-quarter on a wet Beirut street",
+      caption: "Three-quarters of a power move",
+    },
+    {
       src: "/fleet/the-machine-hero.png",
-      alt: "Black Mercedes-Benz W124 at street level",
+      alt: "Black Mercedes-Benz W124 portrait",
       caption: "Built to dominate",
     },
   ],
@@ -223,14 +234,25 @@ const thePredator: Vehicle = {
     "Exposed trellis frame, single round eye, unmistakable Ducati red — the Monster is raw character without a single line out of place.",
   body:
     "A high-voltage scene-setter for action sequences, attitude-led editorials, brand campaigns, and motion-rich music videos.",
-  poster: "/fleet/the-predator-hero.png",
-  posterAlt: "The Predator — red Ducati Monster motorcycle",
-  cardImage: "/fleet/the-predator-hero.png",
-  cardAlt: "The Predator — Ducati Monster",
+  poster: "/fleet/the-predator-beirut.png",
+  posterAlt:
+    "The Predator — red Ducati Monster on a Beirut downtown street with stone façades and street cafés",
+  cardImage: "/fleet/the-predator-beirut.png",
+  cardAlt: "The Predator — Ducati Monster in downtown Beirut",
   gallery: [
     {
+      src: "/fleet/the-predator-beirut.png",
+      alt: "Ducati Monster parked on a Beirut downtown street",
+      caption: "Downtown teeth",
+    },
+    {
+      src: "/fleet/the-predator-beirut-rear.png",
+      alt: "Ducati Monster rear three-quarter on a Beirut backstreet",
+      caption: "She doesn’t whisper",
+    },
+    {
       src: "/fleet/the-predator-hero.png",
-      alt: "Ducati Monster front three-quarter",
+      alt: "Ducati Monster front three-quarter close-up",
       caption: "Built to be felt",
     },
     {
@@ -304,15 +326,26 @@ const ilSignore: Vehicle = {
     "Sunglasses on, blazer thrown over a crisp shirt, espresso somewhere nearby — Il Signore is mood, packaged.",
   body:
     "A perfect frame for lifestyle content, fashion, travel films, hospitality brands, and slow-rolled Mediterranean storytelling.",
-  poster: "/fleet/il-signore-rome.png",
-  posterAlt: "Il Signore — Vespa parked outside a Roman trattoria",
-  cardImage: "/fleet/il-signore-rome.png",
-  cardAlt: "Il Signore — Vespa",
+  poster: "/fleet/il-signore-marina.png",
+  posterAlt:
+    "Il Signore — bronze Vespa GTS parked at the Beirut marina at golden hour",
+  cardImage: "/fleet/il-signore-marina.png",
+  cardAlt: "Il Signore — Vespa GTS at Beirut marina",
   gallery: [
+    {
+      src: "/fleet/il-signore-marina.png",
+      alt: "Bronze Vespa GTS at the Beirut marina with yachts and palm trees",
+      caption: "Beirut, slow rolled",
+    },
+    {
+      src: "/fleet/il-signore-trattoria.png",
+      alt: "Bronze Vespa parked outside Trattoria Da Enzo in Rome",
+      caption: "Roman, by feeling",
+    },
     {
       src: "/fleet/il-signore-rome.png",
       alt: "Stylish man on a Vespa outside Trattoria Da Enzo",
-      caption: "Roman, by feeling",
+      caption: "Dolce vita",
     },
   ],
   bestFor: ["Lifestyle", "Editorial", "Travel film", "Hospitality", "Fashion"],

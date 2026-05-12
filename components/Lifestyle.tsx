@@ -46,25 +46,24 @@ export default function Lifestyle() {
           </a>
         </div>
 
-        {/* Image — Il Signore Vespa lifestyle */}
+        {/* Image — Il Signore Vespa lifestyle (Beirut marina) */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-15%" }}
           transition={{ duration: 1.2, ease: [0.2, 0.8, 0.2, 1] }}
-          className="lg:col-span-7 relative aspect-[4/5] md:aspect-[5/4] rounded-lg overflow-hidden vignette shadow-soft"
+          className="lg:col-span-7 relative aspect-[4/5] rounded-lg overflow-hidden vignette shadow-soft"
         >
           <Image
-            src="/fleet/il-signore-rome.png"
-            alt="Il Signore — a man in a blazer riding a Vespa past a Roman trattoria"
+            src="/fleet/il-signore-marina.png"
+            alt="Il Signore — a bronze Vespa GTS at the Beirut marina at golden hour"
             fill
             sizes="(max-width: 1024px) 100vw, 60vw"
-            loading="lazy"
-            className="object-cover"
+            className="object-cover object-center"
           />
           <div className="absolute top-5 left-5 luxury-badge">
             <span className="block w-1.5 h-1.5 rounded-full bg-red-glow" />
-            Dolce vita
+            Dolce vita · Beirut
           </div>
         </motion.div>
       </div>

@@ -40,9 +40,9 @@ export default function Header() {
           : "bg-gradient-to-b from-ink/55 to-transparent py-4",
       ].join(" ")}
     >
-      <div className="mx-auto max-w-7xl px-5 lg:px-10 flex items-center justify-between gap-6">
-        {/* Left nav (desktop) */}
-        <nav className="hidden lg:flex items-center gap-8" aria-label="Primary left">
+      <div className="mx-auto max-w-7xl px-5 lg:px-10 grid grid-cols-[1fr_auto_1fr] items-center gap-6">
+        {/* Left nav (desktop) — mobile: hide so center logo sits flush */}
+        <nav className="hidden lg:flex items-center gap-7 justify-self-start" aria-label="Primary left">
           {LEFT_NAV.map((item) => (
             <Link
               key={item.href}
@@ -54,23 +54,26 @@ export default function Header() {
           ))}
         </nav>
 
+        {/* Mobile: empty cell so center stays centered */}
+        <div className="lg:hidden" aria-hidden />
+
         {/* Center logo */}
         <Link
           href="/"
           aria-label="Classic Circle — home"
-          className="flex flex-col items-center group lg:absolute lg:left-1/2 lg:-translate-x-1/2"
+          className="flex flex-col items-center justify-center group justify-self-center"
         >
-          <Monogram size={36} stroke="#E0C689" className="group-hover:opacity-90 transition-opacity" />
-          <span className="mt-1.5 font-serif text-[15px] md:text-[17px] tracking-[0.18em] uppercase text-cream group-hover:text-gold-light transition-colors">
+          <Monogram size={36} color="#E0C689" className="group-hover:opacity-90 transition-opacity drop-shadow-[0_0_12px_rgba(216,182,124,0.35)]" />
+          <span className="mt-1.5 font-serif text-[14px] md:text-[16px] tracking-[0.22em] uppercase text-cream group-hover:text-gold-light transition-colors leading-none">
             {BRAND.name}
           </span>
-          <span className="hidden md:block text-[8.5px] tracking-widest2 uppercase text-gold/75 mt-0.5">
+          <span className="hidden md:block text-[8px] tracking-widest2 uppercase text-gold/75 mt-1 leading-none">
             {BRAND.descriptor}
           </span>
         </Link>
 
         {/* Right nav (desktop) */}
-        <nav className="hidden lg:flex items-center gap-6" aria-label="Primary right">
+        <nav className="hidden lg:flex items-center gap-6 justify-self-end" aria-label="Primary right">
           {RIGHT_NAV.slice(0, 2).map((item) => (
             <Link
               key={item.href}
@@ -93,7 +96,7 @@ export default function Header() {
         {/* Mobile menu trigger (also handles tablet) */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden w-11 h-11 grid place-items-center rounded-full border border-gold/30 text-cream"
+          className="lg:hidden w-11 h-11 grid place-items-center rounded-full border border-gold/30 text-cream justify-self-end"
           aria-label="Toggle navigation"
           aria-expanded={open}
         >

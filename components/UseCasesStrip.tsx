@@ -33,8 +33,8 @@ const USE_CASES = [
     title: "Private & Lifestyle",
     copy: "Anniversaries, proposals, slow golden-hour drives.",
     href: "/fleet/il-signore",
-    img: "/fleet/il-signore-rome.png",
-    alt: "Il Signore — a man on a Vespa outside a Roman trattoria",
+    img: "/fleet/il-signore-marina.png",
+    alt: "Il Signore — a bronze Vespa GTS at the Beirut marina at golden hour",
     tag: "04 — Personal",
   },
 ];
