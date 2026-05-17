@@ -95,6 +95,17 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] tracking-widest2 uppercase text-cream/45">
           <p>© {new Date().getFullYear()} {BRAND.name} — {BRAND.descriptor}</p>
           <p>Beirut · Lebanon · By Instagram DM</p>
+          <p>
+            Designed &amp; developed by{" "}
+            <a
+              href="https://webanonstudio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cream/70 hover:text-gold-light transition-colors normal-case tracking-normal"
+            >
+              Webanon
+            </a>
+          </p>
         </div>
       </div>
     </footer>
