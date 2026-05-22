@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://classiccircle.example"),
   title: {
     default:
-      "Classic Circle — Classic Car & Motorcycle Rental in Beirut, Lebanon",
-    template: "%s | Classic Circle",
+      "Beirut Classic Circle — Classic Car & Motorcycle Rental in Beirut, Lebanon",
+    template: "%s | Beirut Classic Circle",
   },
   description:
     "A curated fleet of iconic cars and motorcycles — Mercedes 560 SL, Porsche 997, Royal Enfield, Ducati, Vespa and more — for weddings, films, editorial shoots, and timeless moments in Beirut, Lebanon. Book by Instagram DM.",
   keywords: [
-    "Classic Circle Beirut",
+    "Beirut Classic Circle",
     "classic car rental Lebanon",
     "vintage car rental Beirut",
     "wedding car Beirut",
@@ -47,28 +47,28 @@ export const metadata: Metadata = {
     "Lady in Red",
     "The Affair Porsche",
   ],
-  authors: [{ name: "Classic Circle" }],
+  authors: [{ name: "Beirut Classic Circle" }],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     title:
-      "Classic Circle — Classic Car & Motorcycle Rental in Beirut, Lebanon",
+      "Beirut Classic Circle — Classic Car & Motorcycle Rental in Beirut, Lebanon",
     description:
       "Curated icons for weddings, films, and timeless moments. Book by Instagram DM.",
-    siteName: "Classic Circle — Classic Car Rental",
+    siteName: "Beirut Classic Circle — Classic Car Rental",
     locale: "en_US",
     images: [
       {
         url: "/images/hero-sunset.jpg",
         width: 1200,
         height: 1500,
-        alt: "Classic Circle — vintage red Mercedes-Benz 560 SL at a Beirut sunset",
+        alt: "Beirut Classic Circle — vintage red Mercedes-Benz 560 SL at a Beirut sunset",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Classic Circle — Beirut, Lebanon",
+    title: "Beirut Classic Circle — Beirut, Lebanon",
     description:
       "Iconic cars and motorcycles for weddings, films, and timeless moments in Beirut. DM " +
       INSTAGRAM_HANDLE,

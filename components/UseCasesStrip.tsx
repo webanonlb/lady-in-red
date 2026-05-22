@@ -47,7 +47,7 @@ export default function UseCasesStrip() {
     >
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl mb-14 md:mb-16">
-          <span className="eyebrow text-red-glow">— Use Classic Circle for</span>
+          <span className="eyebrow text-red-glow">— Use Beirut Classic Circle for</span>
           <h2 className="headline mt-5 text-[36px] md:text-5xl lg:text-[60px] uppercase tracking-tight">
             Some moments deserve more than a ride — <em>they deserve an icon.</em>
           </h2>

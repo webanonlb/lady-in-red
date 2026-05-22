@@ -1,5 +1,5 @@
 // =====================================================================
-//  Classic Circle — Fleet
+//  Beirut Classic Circle — Fleet
 // ---------------------------------------------------------------------
 //  Each character is a vehicle in the curated collection. The same
 //  data drives the home page collection grid and every individual
@@ -63,7 +63,7 @@ const ladyInRed: Vehicle = {
   cardAlt: "Lady in Red — Mercedes-Benz 560 SL",
   characterPoster: "/posters/lady-in-red.jpg",
   characterPosterAlt:
-    "Lady in Red — branded Classic Circle poster for the Mercedes 560 SL at night in Beirut",
+    "Lady in Red — branded Beirut Classic Circle poster for the Mercedes 560 SL at night in Beirut",
   gallery: [
     {
       src: "/images/hero-sunset.jpg",
@@ -118,7 +118,7 @@ const theAffair: Vehicle = {
   cardAlt: "The Affair — Porsche 997 Carrera S",
   characterPoster: "/posters/the-affair.jpg",
   characterPosterAlt:
-    "The Affair — branded Classic Circle poster for the Porsche 997",
+    "The Affair — branded Beirut Classic Circle poster for the Porsche 997",
   gallery: [
     {
       src: "/fleet/valentino-hero.png",
@@ -169,7 +169,7 @@ const theMachine: Vehicle = {
   cardAlt: "The Machine — Mercedes-Benz W124 in Beirut",
   characterPoster: "/posters/the-machine.jpg",
   characterPosterAlt:
-    "The Machine — branded Classic Circle poster for the black Mercedes-Benz sedan",
+    "The Machine — branded Beirut Classic Circle poster for the black Mercedes-Benz sedan",
   gallery: [
     {
       src: "/fleet/the-machine-cafe.png",
@@ -214,7 +214,7 @@ const theGentleman: Vehicle = {
   cardAlt: "The Gentleman — Royal Enfield Classic",
   characterPoster: "/posters/the-gentleman.jpg",
   characterPosterAlt:
-    "The Gentleman — branded Classic Circle poster for the Royal Enfield Classic at Beirut port",
+    "The Gentleman — branded Beirut Classic Circle poster for the Royal Enfield Classic at Beirut port",
   gallery: [
     {
       src: "/fleet/the-gentleman-port.png",
@@ -255,7 +255,7 @@ const thePredator: Vehicle = {
   cardAlt: "The Predator — Ducati Monster in downtown Beirut",
   characterPoster: "/posters/the-predator.jpg",
   characterPosterAlt:
-    "The Predator — branded Classic Circle poster for the red Ducati Monster",
+    "The Predator — branded Beirut Classic Circle poster for the red Ducati Monster",
   gallery: [
     {
       src: "/fleet/the-predator-beirut.png",
@@ -306,7 +306,7 @@ const ilGiallo: Vehicle = {
   cardAlt: "Il Giallo — Ducati 749 in yellow",
   characterPoster: "/posters/il-giallo.jpg",
   characterPosterAlt:
-    "Il Giallo — branded Classic Circle poster for the yellow Ducati 749",
+    "Il Giallo — branded Beirut Classic Circle poster for the yellow Ducati 749",
   gallery: [
     {
       src: "/fleet/il-giallo-color.png",
@@ -353,7 +353,7 @@ const ilSignore: Vehicle = {
   cardAlt: "Il Signore — Vespa GTS at Beirut marina",
   characterPoster: "/posters/il-signore.jpg",
   characterPosterAlt:
-    "Il Signore — branded Classic Circle poster for the bronze Vespa GTS in Rome",
+    "Il Signore — branded Beirut Classic Circle poster for the bronze Vespa GTS in Rome",
   gallery: [
     {
       src: "/fleet/il-signore-marina.png",

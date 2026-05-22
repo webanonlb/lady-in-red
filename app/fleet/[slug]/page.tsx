@@ -167,7 +167,7 @@ export default function VehiclePage({ params }: { params: { slug: string } }) {
               <div className="lg:col-span-5 order-2 lg:order-1">
                 <span className="eyebrow text-red-glow">— Official poster</span>
                 <h2 className="headline mt-5 text-[30px] md:text-4xl lg:text-[48px] uppercase tracking-tight">
-                  Presented by <em>Classic Circle.</em>
+                  Presented by <em>Beirut Classic Circle.</em>
                 </h2>
                 <p className="mt-6 text-cream/75 text-[15px] md:text-base leading-relaxed max-w-md">
                   {v.character} has her own poster — a film-room frame for

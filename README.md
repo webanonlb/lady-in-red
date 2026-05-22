@@ -1,6 +1,6 @@
-# Classic Circle — Classic Car Rental
+# Beirut Classic Circle — Classic Car Rental
 
-A cinematic, editorial site for **Classic Circle**, a Beirut-based curated
+A cinematic, editorial site for **Beirut Classic Circle**, a Beirut-based curated
 fleet of classic cars and motorcycles. Lady in Red, Valentino, The Machine,
 The Gentleman, The Predator, Il Giallo, and Il Signore — each a character,
 each cast for its own kind of story.
@@ -221,4 +221,4 @@ Push to GitHub → connect on Netlify → done.
 
 ---
 
-_Built with care for Classic Circle — Beirut, Lebanon._
+_Built with care for Beirut Classic Circle — Beirut, Lebanon._

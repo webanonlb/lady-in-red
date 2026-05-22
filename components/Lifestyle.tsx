@@ -13,12 +13,12 @@ export default function Lifestyle() {
       <div className="mx-auto max-w-7xl grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         {/* Copy */}
         <div className="lg:col-span-5">
-          <span className="eyebrow text-red-glow">— About Classic Circle</span>
+          <span className="eyebrow text-red-glow">— About Beirut Classic Circle</span>
           <h2 className="headline mt-5 text-[36px] md:text-5xl lg:text-[60px] uppercase tracking-tight">
             More than a rental. <em>It’s a lifestyle.</em>
           </h2>
           <p className="mt-6 text-cream/80 text-base md:text-[17px] leading-relaxed max-w-md">
-            Classic Circle is a curated collection of iconic machines for
+            Beirut Classic Circle is a curated collection of iconic machines for
             extraordinary occasions. We don’t just rent vehicles — we create
             moments that stay with you.
           </p>

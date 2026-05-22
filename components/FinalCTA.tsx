@@ -12,7 +12,7 @@ export default function FinalCTA() {
       <div className="absolute inset-0">
         <Image
           src="/images/just-married.jpg"
-          alt="Classic Circle — a Just Married scene on a candle-lit drive"
+          alt="Beirut Classic Circle — a Just Married scene on a candle-lit drive"
           fill
           sizes="100vw"
           className="object-cover object-center"

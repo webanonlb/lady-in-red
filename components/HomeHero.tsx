@@ -15,7 +15,7 @@ export default function HomeHero() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero-sunset.jpg"
-          alt="Classic Circle — vintage red Mercedes-Benz 560 SL on the Beirut waterfront at golden hour"
+          alt="Beirut Classic Circle — vintage red Mercedes-Benz 560 SL on the Beirut waterfront at golden hour"
           fill
           priority
           sizes="100vw"

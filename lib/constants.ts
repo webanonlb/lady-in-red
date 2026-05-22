@@ -1,5 +1,5 @@
 // =====================================================================
-//  Classic Circle — Brand Constants
+//  Beirut Classic Circle — Brand Constants
 // ---------------------------------------------------------------------
 //  Single source of truth. The Instagram URL flows into every CTA
 //  across the site (header, hero, fleet cards, vehicle pages, footer,
@@ -11,7 +11,7 @@ export const INSTAGRAM_URL = "https://www.instagram.com/ladyinred.sl/";
 export const INSTAGRAM_HANDLE = "@ladyinred.sl";
 
 export const BRAND = {
-  name: "Classic Circle",
+  name: "Beirut Classic Circle",
   descriptor: "Classic Car Rental",
   monogram: "CC",
   location: "Beirut, Lebanon",
