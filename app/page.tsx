@@ -7,7 +7,6 @@ import UseCasesStrip from "@/components/UseCasesStrip";
 import ValueIcons from "@/components/ValueIcons";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
-import MobileBottomBar from "@/components/MobileBottomBar";
 import { BRAND, INSTAGRAM_HANDLE } from "@/lib/constants";
 import { FLEET } from "@/lib/fleet";
 
@@ -48,7 +47,6 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
-      <MobileBottomBar />
 
       {/* Hidden SEO content with target keywords used naturally */}
       <p className="sr-only">

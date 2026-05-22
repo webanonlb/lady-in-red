@@ -6,7 +6,6 @@ import { FLEET, getVehicle } from "@/lib/fleet";
 import { BRAND, INSTAGRAM_URL, INSTAGRAM_HANDLE } from "@/lib/constants";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import MobileBottomBar from "@/components/MobileBottomBar";
 import FleetStrip from "@/components/FleetStrip";
 
 export const dynamicParams = false;
@@ -262,7 +261,6 @@ export default function VehiclePage({ params }: { params: { slug: string } }) {
         <FleetStrip currentSlug={v.slug} />
       </main>
       <Footer />
-      <MobileBottomBar />
     </>
   );
 }

@@ -101,7 +101,7 @@ export default function Footer() {
               href="https://webanonstudio.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cream/70 hover:text-gold-light transition-colors normal-case tracking-normal"
+              className="text-cream/70 hover:text-gold-light transition-colors"
             >
               Webanon
             </a>
