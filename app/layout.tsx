@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     "music video car rental Lebanon",
     "luxury wedding car Beirut",
     "Lady in Red",
-    "Valentino Porsche",
+    "The Affair Porsche",
   ],
   authors: [{ name: "Classic Circle" }],
   alternates: { canonical: "/" },

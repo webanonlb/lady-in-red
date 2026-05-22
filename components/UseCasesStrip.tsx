@@ -16,9 +16,9 @@ const USE_CASES = [
   {
     title: "Films & Music Videos",
     copy: "Production-ready scene-setters with cinematic presence.",
-    href: "/fleet/valentino",
+    href: "/fleet/the-affair",
     img: "/fleet/valentino-hero.png",
-    alt: "Valentino — red Porsche 997 on a forest road",
+    alt: "The Affair — red Porsche 997 on a forest road",
     tag: "02 — On camera",
   },
   {

@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HomeHero from "@/components/HomeHero";
 import CollectionGrid from "@/components/CollectionGrid";
+import PosterGallery from "@/components/PosterGallery";
 import Lifestyle from "@/components/Lifestyle";
 import UseCasesStrip from "@/components/UseCasesStrip";
 import ValueIcons from "@/components/ValueIcons";
@@ -40,6 +41,7 @@ export default function Home() {
       <main className="overflow-hidden">
         <HomeHero />
         <CollectionGrid />
+        <PosterGallery />
         <UseCasesStrip />
         <Lifestyle />
         <ValueIcons />
@@ -51,7 +53,7 @@ export default function Home() {
       {/* Hidden SEO content with target keywords used naturally */}
       <p className="sr-only">
         {BRAND.name} is a Beirut-based curated rental of classic cars and motorcycles:
-        a vintage Mercedes 560 SL (Lady in Red), Porsche 997 Carrera S (Valentino),
+        a vintage Mercedes 560 SL (Lady in Red), Porsche 997 Carrera S (The Affair),
         Mercedes-Benz W124 (The Machine), Royal Enfield (The Gentleman), Ducati
         Monster (The Predator), Ducati 749 (Il Giallo), and Vespa (Il Signore).
         Available across Lebanon for weddings, music videos, photoshoots, private

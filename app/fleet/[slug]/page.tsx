@@ -158,6 +158,45 @@ export default function VehiclePage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
+        {/* OFFICIAL POSTER — branded "Beirut Classic Circle presents…" art */}
+        {v.characterPoster && (
+          <section
+            aria-label={`${v.character} — official poster`}
+            className="relative py-20 md:py-28 px-5 lg:px-10"
+          >
+            <div className="mx-auto max-w-6xl grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+              <div className="lg:col-span-5 order-2 lg:order-1">
+                <span className="eyebrow text-red-glow">— Official poster</span>
+                <h2 className="headline mt-5 text-[30px] md:text-4xl lg:text-[48px] uppercase tracking-tight">
+                  Presented by <em>Classic Circle.</em>
+                </h2>
+                <p className="mt-6 text-cream/75 text-[15px] md:text-base leading-relaxed max-w-md">
+                  {v.character} has her own poster — a film-room frame for
+                  the character that lives between the lines of every booking.
+                  Saved for the moodboard, the production deck, the wedding
+                  brief.
+                </p>
+                <div className="gold-line my-8 max-w-[180px]" />
+                <p className="font-serif italic text-cream/65 text-lg max-w-md">
+                  “{v.tagline}”
+                </p>
+              </div>
+
+              <div className="lg:col-span-7 order-1 lg:order-2 relative aspect-[2/3] max-w-[440px] mx-auto lg:max-w-none w-full rounded-md overflow-hidden border border-gold/20 shadow-soft">
+                <Image
+                  src={v.characterPoster}
+                  alt={v.characterPosterAlt ?? v.character}
+                  fill
+                  sizes="(max-width: 1024px) 80vw, 560px"
+                  loading="lazy"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 pointer-events-none [box-shadow:inset_0_0_80px_rgba(0,0,0,0.5)]" />
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* SCENES / GALLERY */}
         <section className="relative py-20 md:py-28 px-5 lg:px-10 bg-gradient-to-b from-ink via-burgundy/30 to-ink">
           <div className="mx-auto max-w-7xl">

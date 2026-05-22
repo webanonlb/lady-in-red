@@ -32,6 +32,8 @@ export type Vehicle = {
   posterAlt: string;
   cardImage: string;        // image used in collection grid
   cardAlt: string;
+  characterPoster?: string; // branded "presents" poster art (optional)
+  characterPosterAlt?: string;
   gallery: ScenePhoto[];
   bestFor: string[];        // chips/list
   quote: string;            // italic pull quote at bottom
@@ -59,6 +61,9 @@ const ladyInRed: Vehicle = {
     "Lady in Red — vintage red Mercedes-Benz 560 SL against a Beirut sunset",
   cardImage: "/images/hero-sunset.jpg",
   cardAlt: "Lady in Red — Mercedes-Benz 560 SL",
+  characterPoster: "/posters/lady-in-red.jpg",
+  characterPosterAlt:
+    "Lady in Red — branded Classic Circle poster for the Mercedes 560 SL at night in Beirut",
   gallery: [
     {
       src: "/images/hero-sunset.jpg",
@@ -91,31 +96,34 @@ const ladyInRed: Vehicle = {
   accent: "red",
 };
 
-const valentino: Vehicle = {
-  slug: "valentino",
-  character: "Valentino",
+const theAffair: Vehicle = {
+  slug: "the-affair",
+  character: "The Affair",
   model: "Porsche 911 (997) Carrera S",
   era: "Modern classic",
   bodyType: "Coupé",
   color: "Guards red",
   origin: "Germany · 997",
   badge: "Porsche 997 Carrera S",
-  tagline: "Arrive unforgettable.",
+  tagline: "Some temptations are worth it.",
   headline: "A timeless silhouette built for the moment.",
   headlineEm: "the moment",
   intro:
     "Wide hips, round eyes, an unmistakable profile — the 997 Carrera S is the Porsche shape at its purest, dressed in guards red.",
   body:
-    "Equally at home framing a wedding entrance or anchoring a film scene, Valentino arrives with quiet confidence and walks away with the shot.",
+    "Equally at home framing a wedding entrance or anchoring a film scene, The Affair arrives with quiet confidence and walks away with the shot.",
   poster: "/fleet/valentino-hero.png",
-  posterAlt: "Valentino — red Porsche 911 (997) Carrera S on a forest road",
+  posterAlt: "The Affair — red Porsche 911 (997) Carrera S on a forest road",
   cardImage: "/fleet/valentino-hero.png",
-  cardAlt: "Valentino — Porsche 997 Carrera S",
+  cardAlt: "The Affair — Porsche 997 Carrera S",
+  characterPoster: "/posters/the-affair.jpg",
+  characterPosterAlt:
+    "The Affair — branded Classic Circle poster for the Porsche 997",
   gallery: [
     {
       src: "/fleet/valentino-hero.png",
       alt: "Porsche 997 on a forest road",
-      caption: "Your next scene starts here",
+      caption: "Some temptations are worth it",
     },
     {
       src: "/fleet/valentino-arrive.png",
@@ -159,6 +167,9 @@ const theMachine: Vehicle = {
     "The Machine — black Mercedes-Benz W124 parked outside Aïn El Mréisseh Café in Beirut",
   cardImage: "/fleet/the-machine-cafe.png",
   cardAlt: "The Machine — Mercedes-Benz W124 in Beirut",
+  characterPoster: "/posters/the-machine.jpg",
+  characterPosterAlt:
+    "The Machine — branded Classic Circle poster for the black Mercedes-Benz sedan",
   gallery: [
     {
       src: "/fleet/the-machine-cafe.png",
@@ -190,7 +201,7 @@ const theGentleman: Vehicle = {
   color: "Squadron black",
   origin: "United Kingdom / India",
   badge: "Royal Enfield Classic",
-  tagline: "It doesn’t belong to one place.",
+  tagline: "Some journeys deserve character.",
   headline: "Some machines don’t age. They evolve.",
   headlineEm: "evolve",
   intro:
@@ -201,6 +212,9 @@ const theGentleman: Vehicle = {
   posterAlt: "The Gentleman — Royal Enfield classic motorcycle at a Mediterranean port",
   cardImage: "/fleet/the-gentleman-port.png",
   cardAlt: "The Gentleman — Royal Enfield Classic",
+  characterPoster: "/posters/the-gentleman.jpg",
+  characterPosterAlt:
+    "The Gentleman — branded Classic Circle poster for the Royal Enfield Classic at Beirut port",
   gallery: [
     {
       src: "/fleet/the-gentleman-port.png",
@@ -239,6 +253,9 @@ const thePredator: Vehicle = {
     "The Predator — red Ducati Monster on a Beirut downtown street with stone façades and street cafés",
   cardImage: "/fleet/the-predator-beirut.png",
   cardAlt: "The Predator — Ducati Monster in downtown Beirut",
+  characterPoster: "/posters/the-predator.jpg",
+  characterPosterAlt:
+    "The Predator — branded Classic Circle poster for the red Ducati Monster",
   gallery: [
     {
       src: "/fleet/the-predator-beirut.png",
@@ -276,7 +293,7 @@ const ilGiallo: Vehicle = {
   color: "Giallo (yellow)",
   origin: "Italy · Borgo Panigale",
   badge: "Ducati 749 · Il Giallo",
-  tagline: "You don’t choose this color. It chooses you.",
+  tagline: "Born to stand apart.",
   headline: "An underground icon, painted in sunshine.",
   headlineEm: "underground",
   intro:
@@ -287,6 +304,9 @@ const ilGiallo: Vehicle = {
   posterAlt: "Il Giallo — yellow Ducati 749 supersport motorcycle",
   cardImage: "/fleet/il-giallo-underground.png",
   cardAlt: "Il Giallo — Ducati 749 in yellow",
+  characterPoster: "/posters/il-giallo.jpg",
+  characterPosterAlt:
+    "Il Giallo — branded Classic Circle poster for the yellow Ducati 749",
   gallery: [
     {
       src: "/fleet/il-giallo-color.png",
@@ -331,6 +351,9 @@ const ilSignore: Vehicle = {
     "Il Signore — bronze Vespa GTS parked at the Beirut marina at golden hour",
   cardImage: "/fleet/il-signore-marina.png",
   cardAlt: "Il Signore — Vespa GTS at Beirut marina",
+  characterPoster: "/posters/il-signore.jpg",
+  characterPosterAlt:
+    "Il Signore — branded Classic Circle poster for the bronze Vespa GTS in Rome",
   gallery: [
     {
       src: "/fleet/il-signore-marina.png",
@@ -355,7 +378,7 @@ const ilSignore: Vehicle = {
 
 export const FLEET: Vehicle[] = [
   ladyInRed,
-  valentino,
+  theAffair,
   theMachine,
   theGentleman,
   thePredator,
