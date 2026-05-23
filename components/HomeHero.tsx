@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BOOKING_MAILTO, BRAND } from "@/lib/constants";
+import { INSTAGRAM_URL, BRAND } from "@/lib/constants";
 
 export default function HomeHero() {
   return (
@@ -70,8 +70,13 @@ export default function HomeHero() {
           <Link href="#collection" className="btn-red">
             Explore the Collection
           </Link>
-          <a href={BOOKING_MAILTO} className="btn-ghost">
-            Email Concierge
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost"
+          >
+            DM on Instagram
           </a>
         </motion.div>
 

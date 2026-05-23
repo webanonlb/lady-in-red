@@ -4,6 +4,7 @@ import Image from "next/image";
 import {
   INSTAGRAM_URL,
   INSTAGRAM_HANDLE,
+  BOOKING_EMAIL,
   BOOKING_MAILTO,
   BRAND,
 } from "@/lib/constants";
@@ -38,8 +39,13 @@ export default function FinalCTA() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3 cta-stack">
-          <a href={BOOKING_MAILTO} className="btn-red">
-            Email Concierge
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-red"
+          >
+            DM on Instagram
           </a>
           <a
             href={INSTAGRAM_URL}
@@ -50,6 +56,17 @@ export default function FinalCTA() {
             Follow {INSTAGRAM_HANDLE}
           </a>
         </div>
+
+        {/* Email fallback — quieter, low-friction alt */}
+        <p className="mt-5 text-[11px] tracking-widest2 uppercase text-cream/55">
+          or{" "}
+          <a
+            href={BOOKING_MAILTO}
+            className="text-gold-light hover:text-cream transition-colors"
+          >
+            {BOOKING_EMAIL}
+          </a>
+        </p>
 
         <p className="mt-10 font-serif italic text-cream/65 text-lg">
           “Some moments deserve more than a ride — they deserve an icon.”

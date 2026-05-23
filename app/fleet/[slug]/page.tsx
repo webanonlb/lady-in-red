@@ -7,6 +7,8 @@ import {
   BRAND,
   BOOKING_EMAIL,
   mailtoFor,
+  INSTAGRAM_URL,
+  INSTAGRAM_HANDLE,
   LADY_IN_RED_INSTAGRAM_URL,
   LADY_IN_RED_INSTAGRAM_HANDLE,
 } from "@/lib/constants";
@@ -40,25 +42,17 @@ export default function VehiclePage({ params }: { params: { slug: string } }) {
   const v = getVehicle(params.slug);
   if (!v) notFound();
 
-  /* Per-vehicle booking endpoint:
-     Lady in Red keeps her dedicated Instagram DM line.
-     Everyone else routes to the brand concierge inbox. */
+  /* Per-vehicle booking channel:
+       - Lady in Red keeps her own dedicated DM line @ladyinred.sl
+       - Everyone else routes to the brand IG @beirutclassiccircle
+     The concierge email is offered as a quieter, secondary option
+     on the bottom CTA section only — primary CTA stays IG. */
   const isLadyInRed = v.slug === "lady-in-red";
-  const bookingHref = isLadyInRed
-    ? LADY_IN_RED_INSTAGRAM_URL
-    : mailtoFor(v.character);
-  const bookingLinkProps = isLadyInRed
-    ? { target: "_blank", rel: "noopener noreferrer" }
-    : {};
-  const bookingHeroLabel = isLadyInRed
-    ? `DM for ${v.character}`
-    : `Email Concierge for ${v.character}`;
-  const bookingFinalLabel = isLadyInRed
-    ? `Message ${LADY_IN_RED_INSTAGRAM_HANDLE}`
-    : `Email ${BOOKING_EMAIL}`;
-  const bookingNote = isLadyInRed
-    ? `Availability for ${v.character} is handled through Instagram DM.`
-    : `Availability for ${v.character} is handled through our concierge inbox.`;
+  const igHref = isLadyInRed ? LADY_IN_RED_INSTAGRAM_URL : INSTAGRAM_URL;
+  const igHandle = isLadyInRed ? LADY_IN_RED_INSTAGRAM_HANDLE : INSTAGRAM_HANDLE;
+  const heroIgLabel = `DM for ${v.character}`;
+  const finalIgLabel = `Message ${igHandle}`;
+  const bookingMailto = mailtoFor(v.character);
 
   // Highlight headline emphasis
   const headlineParts = v.headlineEm
@@ -126,8 +120,13 @@ export default function VehiclePage({ params }: { params: { slug: string } }) {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3 cta-stack">
-              <a href={bookingHref} {...bookingLinkProps} className="btn-red">
-                {bookingHeroLabel}
+              <a
+                href={igHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-red"
+              >
+                {heroIgLabel}
               </a>
               <Link href="#story" className="btn-ghost">
                 Explore {v.character}
@@ -273,15 +272,31 @@ export default function VehiclePage({ params }: { params: { slug: string } }) {
               Bring her into <em>your scene.</em>
             </h2>
             <p className="mt-6 text-cream/75 text-base md:text-[17px] leading-relaxed max-w-xl mx-auto">
-              {bookingNote} Send your date, location, and the moment you want
-              to create.
+              Availability for {v.character} is handled through Instagram DM.
+              Send your date, location, and the moment you want to create.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3 cta-stack">
-              <a href={bookingHref} {...bookingLinkProps} className="btn-red">
-                {bookingFinalLabel}
+              <a
+                href={igHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-red"
+              >
+                {finalIgLabel}
               </a>
               <Link href="/#collection" className="btn-ghost">Browse the collection</Link>
             </div>
+
+            {/* Quieter email alternative — for booking inquiries that prefer email */}
+            <p className="mt-5 text-[11px] tracking-widest2 uppercase text-cream/55">
+              or{" "}
+              <a
+                href={bookingMailto}
+                className="text-gold-light hover:text-cream transition-colors"
+              >
+                {BOOKING_EMAIL}
+              </a>
+            </p>
           </div>
         </section>
 
