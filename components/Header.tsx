@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { INSTAGRAM_URL, BRAND } from "@/lib/constants";
+import { INSTAGRAM_URL, BOOKING_MAILTO, BRAND } from "@/lib/constants";
 import { FLEET } from "@/lib/fleet";
 import Monogram from "./Monogram";
 
@@ -35,7 +35,7 @@ const LEFT_NAV: NavItem[] = [
 const RIGHT_NAV: NavItem[] = [
   { href: "/#events", label: "Events" },
   { href: "/#gallery", label: "Gallery", children: fleetChildren },
-  { href: INSTAGRAM_URL, label: "Contact", external: true },
+  { href: BOOKING_MAILTO, label: "Contact", external: true },
 ];
 
 const MOBILE_NAV: NavItem[] = [...LEFT_NAV, ...RIGHT_NAV];
@@ -103,9 +103,7 @@ export default function Header() {
             <DesktopNavItem key={item.label} item={item} align="right" />
           ))}
           <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={BOOKING_MAILTO}
             className="text-[11px] tracking-widest2 uppercase border border-gold/60 px-4 py-2 rounded-full text-cream hover:bg-gold/10 hover:border-gold transition-colors whitespace-nowrap"
           >
             Contact
@@ -159,13 +157,8 @@ export default function Header() {
                 onNavigate={() => setOpen(false)}
               />
             ))}
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="m-4 btn-red"
-            >
-              DM on Instagram
+            <a href={BOOKING_MAILTO} className="m-4 btn-red">
+              Email Concierge
             </a>
           </nav>
         </div>

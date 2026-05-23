@@ -1,7 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { INSTAGRAM_URL, INSTAGRAM_HANDLE, BRAND } from "@/lib/constants";
+import {
+  INSTAGRAM_URL,
+  INSTAGRAM_HANDLE,
+  BOOKING_MAILTO,
+  BRAND,
+} from "@/lib/constants";
 
 export default function FinalCTA() {
   return (
@@ -33,10 +38,15 @@ export default function FinalCTA() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3 cta-stack">
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-red">
-            DM on Instagram
+          <a href={BOOKING_MAILTO} className="btn-red">
+            Email Concierge
           </a>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost"
+          >
             Follow {INSTAGRAM_HANDLE}
           </a>
         </div>

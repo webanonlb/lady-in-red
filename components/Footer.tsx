@@ -1,7 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { INSTAGRAM_URL, INSTAGRAM_HANDLE, BRAND } from "@/lib/constants";
+import {
+  INSTAGRAM_URL,
+  INSTAGRAM_HANDLE,
+  BOOKING_EMAIL,
+  BOOKING_MAILTO,
+  BRAND,
+} from "@/lib/constants";
 import { FLEET } from "@/lib/fleet";
 import Monogram from "./Monogram";
 
@@ -79,22 +85,25 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-red mt-7"
-            >
-              Message {INSTAGRAM_HANDLE}
+            <a href={BOOKING_MAILTO} className="btn-red mt-7">
+              Email Concierge
             </a>
+            <p className="mt-4 text-[11px] tracking-widest uppercase text-cream/55">
+              {BOOKING_EMAIL}
+            </p>
           </div>
         </div>
 
         <div className="gold-line mt-16 mb-8" />
 
+        {/* Availability disclaimer */}
+        <p className="text-[11px] tracking-widest2 uppercase text-cream/55 leading-relaxed max-w-3xl mb-6">
+          {BRAND.availability}
+        </p>
+
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] tracking-widest2 uppercase text-cream/45">
           <p>© {new Date().getFullYear()} {BRAND.name} — {BRAND.descriptor}</p>
-          <p>Beirut · Lebanon · By Instagram DM</p>
+          <p>Beirut · Lebanon · By Concierge Email & Instagram</p>
           <p>
             Designed &amp; developed by{" "}
             <a

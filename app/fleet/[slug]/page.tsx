@@ -3,7 +3,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FLEET, getVehicle } from "@/lib/fleet";
-import { BRAND, INSTAGRAM_URL, INSTAGRAM_HANDLE } from "@/lib/constants";
+import {
+  BRAND,
+  BOOKING_EMAIL,
+  mailtoFor,
+  LADY_IN_RED_INSTAGRAM_URL,
+  LADY_IN_RED_INSTAGRAM_HANDLE,
+} from "@/lib/constants";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FleetStrip from "@/components/FleetStrip";
@@ -33,6 +39,26 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 export default function VehiclePage({ params }: { params: { slug: string } }) {
   const v = getVehicle(params.slug);
   if (!v) notFound();
+
+  /* Per-vehicle booking endpoint:
+     Lady in Red keeps her dedicated Instagram DM line.
+     Everyone else routes to the brand concierge inbox. */
+  const isLadyInRed = v.slug === "lady-in-red";
+  const bookingHref = isLadyInRed
+    ? LADY_IN_RED_INSTAGRAM_URL
+    : mailtoFor(v.character);
+  const bookingLinkProps = isLadyInRed
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
+  const bookingHeroLabel = isLadyInRed
+    ? `DM for ${v.character}`
+    : `Email Concierge for ${v.character}`;
+  const bookingFinalLabel = isLadyInRed
+    ? `Message ${LADY_IN_RED_INSTAGRAM_HANDLE}`
+    : `Email ${BOOKING_EMAIL}`;
+  const bookingNote = isLadyInRed
+    ? `Availability for ${v.character} is handled through Instagram DM.`
+    : `Availability for ${v.character} is handled through our concierge inbox.`;
 
   // Highlight headline emphasis
   const headlineParts = v.headlineEm
@@ -100,10 +126,12 @@ export default function VehiclePage({ params }: { params: { slug: string } }) {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3 cta-stack">
-              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-red">
-                DM for {v.character}
+              <a href={bookingHref} {...bookingLinkProps} className="btn-red">
+                {bookingHeroLabel}
               </a>
-              <Link href="#story" className="btn-ghost">View the story</Link>
+              <Link href="#story" className="btn-ghost">
+                Explore {v.character}
+              </Link>
             </div>
 
             <div className="mt-auto pt-16 hidden md:flex flex-wrap items-center gap-6 text-[10.5px] tracking-widest2 uppercase text-gold/75">
@@ -245,12 +273,12 @@ export default function VehiclePage({ params }: { params: { slug: string } }) {
               Bring her into <em>your scene.</em>
             </h2>
             <p className="mt-6 text-cream/75 text-base md:text-[17px] leading-relaxed max-w-xl mx-auto">
-              Availability for {v.character} is handled through Instagram DM.
-              Send your date, location, and the moment you want to create.
+              {bookingNote} Send your date, location, and the moment you want
+              to create.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3 cta-stack">
-              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-red">
-                Message {INSTAGRAM_HANDLE}
+              <a href={bookingHref} {...bookingLinkProps} className="btn-red">
+                {bookingFinalLabel}
               </a>
               <Link href="/#collection" className="btn-ghost">Browse the collection</Link>
             </div>
