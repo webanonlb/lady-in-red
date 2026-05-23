@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import HomeHero from "@/components/HomeHero";
-import CollectionGrid from "@/components/CollectionGrid";
 import PosterGallery from "@/components/PosterGallery";
 import Lifestyle from "@/components/Lifestyle";
 import UseCasesStrip from "@/components/UseCasesStrip";
@@ -39,7 +38,10 @@ export default function Home() {
       <Header />
       <main className="overflow-hidden">
         <HomeHero />
-        <CollectionGrid />
+        {/* Anchor targets so the "Collection" and "Gallery" nav items
+            both scroll to the poster wall (the single cast showcase) */}
+        <span id="collection" className="block" aria-hidden />
+        <span id="gallery" className="block" aria-hidden />
         <PosterGallery />
         <UseCasesStrip />
         <Lifestyle />

@@ -75,6 +75,20 @@ export const metadata: Metadata = {
     images: ["/images/hero-sunset.jpg"],
   },
   robots: { index: true, follow: true },
+  /* Explicit favicon set — Safari needs proper <link> tags rather
+     than the App Router file-based convention. /favicon.ico is a
+     multi-resolution .ico (16/24/32/48/64) generated from the logo. */
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/favicon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
 };
 
 export const viewport: Viewport = {
